@@ -1,0 +1,243 @@
+.sidebar {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+}
+
+/* ── Fear Counter ── */
+.fearCounter {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.fearCounter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 147, 74, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fearNumber {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(232, 201, 122, 0.4);
+  transition: color 0.3s;
+}
+.fearNumber.maxed {
+  color: var(--danger);
+  text-shadow: 0 0 30px rgba(204, 68, 68, 0.4);
+}
+
+.fearLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+.fearMax {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+.fearBarWrap {
+  margin-top: 1rem;
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.fearBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 3px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fearBar.danger {
+  background: linear-gradient(90deg, var(--danger), #e88);
+}
+
+.milestones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  padding: 0 2px;
+}
+.milestone {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  font-family: 'Cinzel', serif;
+  transition: color 0.2s;
+}
+.milestone.reached {
+  color: var(--accent);
+}
+
+/* ── Effects Panel ── */
+.effectsPanel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.2rem 0.5rem;
+  margin-bottom: 0;
+}
+
+.sectionLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.8rem;
+}
+
+.noEffects {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.88rem;
+  padding: 0.4rem 0 0.9rem;
+}
+
+.effectList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.effectItem {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+.effectItem:last-child {
+  border-bottom: none;
+}
+.effectIcon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.effectBody {
+  flex: 1;
+  min-width: 0;
+}
+.effectName {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--accent);
+  display: block;
+  letter-spacing: 0.06em;
+}
+.effectDesc {
+  font-size: 0.88rem;
+  color: var(--text);
+  display: block;
+}
+.effectFear {
+  margin-left: auto;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+}
+
+/* ── Buttons ── */
+.btnShare {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btnShare:hover {
+  background: rgba(200, 147, 74, 0.12);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.btnShare.copied {
+  background: rgba(74, 173, 172, 0.12);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.shareUrlWrap {
+  margin-top: 0.6rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+.shareUrlText {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+  cursor: text;
+  min-width: 0;
+}
+.shareUrlCopy {
+  flex-shrink: 0;
+  padding: 0.5rem 0.8rem;
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--border);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 0.15s, background 0.15s;
+}
+.shareUrlCopy:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.btnReset {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.65rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btnReset:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}

@@ -1,6 +1,6 @@
 export const VOWS = [
   {
-    id: 'blood',
+    id: 'pain',
     name: 'Vow of Pain',
     icon: '🩸',
     baseEffect: 'Enemies deal more damage',
@@ -11,37 +11,7 @@ export const VOWS = [
     ],
   },
   {
-    id: 'fury',
-    name: 'Vow of Frenzy',
-    icon: '⚡',
-    baseEffect: 'Enemies move and attack faster',
-    levels: [
-      { fear: 3, label: 'I',  effect: 'Foes are +20% faster', negEffect: 'Foes move and attack +20% faster' },
-      { fear: 6, label: 'II', effect: 'Foes are +40% faster', negEffect: 'Foes move and attack +40% faster' },
-    ],
-  },
-  {
-    id: 'wandering',
-    name: 'Vow of Menace',
-    icon: '🌀',
-    baseEffect: 'Foes from the next region appear',
-    levels: [
-      { fear: 1, label: 'I',  effect: '10% next-region foes', negEffect: '10% of foes are from the next, harder region' },
-      { fear: 3, label: 'II', effect: '25% next-region foes', negEffect: '25% of foes are from the next, harder region' },
-    ],
-  },
-  {
-    id: 'suffering',
-    name: 'Vow of Fangs',
-    icon: '💥',
-    baseEffect: '# of unique traits for armoured enemies',
-    levels: [
-      { fear: 2, label: 'I',  effect: '1 trait', negEffect: 'One additional trait for armored enemies' },
-      { fear: 5, label: 'II', effect: '2 traits', negEffect: 'Twice additional trait for armored enemies' },
-    ],
-  },
-  {
-    id: 'dominance',
+    id: 'grit',
     name: 'Vow of Grit',
     icon: '💀',
     baseEffect: 'Enemies have more health',
@@ -52,7 +22,7 @@ export const VOWS = [
     ],
   },
   {
-    id: 'rebuke',
+    id: 'wards',
     name: 'Vow of Wards',
     icon: '🛡',
     baseEffect: 'Enemies have a barrier',
@@ -62,7 +32,18 @@ export const VOWS = [
     ],
   },
   {
-    id: 'commotion',
+    id: 'frenzy',
+    name: 'Vow of Frenzy',
+    icon: '⚡',
+    baseEffect: 'Enemies move and attack faster',
+    levels: [
+      { fear: 3, label: 'I',  effect: 'Foes are +20% faster', negEffect: 'Foes move and attack +20% faster' },
+      { fear: 6, label: 'II', effect: 'Foes are +40% faster', negEffect: 'Foes move and attack +40% faster' },
+    ],
+  },
+
+  {
+    id: 'hordes',
     name: 'Vow of Hordes',
     icon: '👥',
     baseEffect: 'More foes per encounter',
@@ -73,8 +54,18 @@ export const VOWS = [
     ],
   },
   {
-    id: 'haunting',
-    name: 'Vow of Haunting',
+    id: 'menance',
+    name: 'Vow of Menace',
+    icon: '🌀',
+    baseEffect: 'Foes from the next region appear',
+    levels: [
+      { fear: 1, label: 'I',  effect: '10% next-region foes', negEffect: '10% of foes are from the next, harder region' },
+      { fear: 3, label: 'II', effect: '25% next-region foes', negEffect: '25% of foes are from the next, harder region' },
+    ],
+  },
+  {
+    id: 'return',
+    name: 'Vow of Return',
     icon: '👻',
     baseEffect: 'Slain foes may become revenants',
     levels: [
@@ -83,15 +74,15 @@ export const VOWS = [
     ],
   },
   {
-    id: 'panic',
-    name: 'Vow of Shadow',
-    icon: '🔮',
-    baseEffect: 'Miniboss have henchman',
+    id: 'fangs',
+    name: 'Vow of Fangs',
+    icon: '💥',
+    baseEffect: '# of unique traits for armoured enemies',
     levels: [
-      { fear: 2, label: 'I', effect: 'Adds miniboss henchmen', negEffect: 'Adds one or more minions to miniboss rooms' },
+      { fear: 2, label: 'I',  effect: '1 trait', negEffect: 'One additional trait for armored enemies' },
+      { fear: 5, label: 'II', effect: '2 traits', negEffect: 'Twice additional trait for armored enemies' },
     ],
   },
-
 
   {
     id: 'scars',
@@ -105,7 +96,7 @@ export const VOWS = [
     ],
   },
   {
-    id: 'destitution',
+    id: 'debt',
     name: 'Vow of Debt',
     icon: '💰',
     baseEffect: 'Gold-cost items are more expensive',
@@ -115,7 +106,16 @@ export const VOWS = [
     ],
   },
   {
-    id: 'bitterness',
+    id: 'shadow',
+    name: 'Vow of Shadow',
+    icon: '🔮',
+    baseEffect: 'Miniboss have henchman',
+    levels: [
+      { fear: 2, label: 'I', effect: 'Adds miniboss henchmen', negEffect: 'Adds one or more minions to miniboss rooms' },
+    ],
+  },
+  {
+    id: 'forfeit',
     name: 'Vow of Forfeit',
     icon: '🧅',
     baseEffect: 'First boon in each region replaced by an onion',
@@ -123,8 +123,20 @@ export const VOWS = [
       { fear: 3, label: 'I', effect: 'First boon → onion (restore HP)', negEffect: 'The first boon in each region is replaced by an onion (no boon gained)' },
     ],
   },
+
   {
-    id: 'abandon',
+    id: 'time',
+    name: 'Vow of Time',
+    icon: '⏳',
+    baseEffect: 'Time limit per region',
+    levels: [
+      { fear: 1, label: 'I',   effect: '9 min per region', negEffect: 'You have 9 minutes to clear each region or else' },
+      { fear: 3, label: 'II',  effect: '7 min per region', negEffect: 'You have 7 minutes to clear each region or else' },
+      { fear: 6, label: 'III', effect: '5 min per region', negEffect: 'You have 5 minutes to clear each region or else' },
+    ],
+  },
+  {
+    id: 'void',
     name: 'Vow of Void',
     icon: '🃏',
     baseEffect: 'Cannot use as much grasp',
@@ -136,7 +148,7 @@ export const VOWS = [
     ],
   },
   {
-    id: 'arrogance',
+    id: 'hubris',
     name: 'Vow of Hubris',
     icon: '✨',
     baseEffect: 'Rare+ boons drain your magick',
@@ -146,7 +158,7 @@ export const VOWS = [
     ],
   },
   {
-    id: 'forsaking',
+    id: 'denial',
     name: 'Vow of Denial',
     icon: '🚫',
     baseEffect: 'Unchosen boons are permanently removed',
@@ -154,19 +166,6 @@ export const VOWS = [
       { fear: 2, label: 'I', effect: '2 unchosen boons removed', negEffect: 'After picking a boon, the 2 unpicked options will never appear again' },
     ],
   },
-
-  {
-    id: 'desperation',
-    name: 'Vow of Desperation',
-    icon: '⏳',
-    baseEffect: 'Time limit per region',
-    levels: [
-      { fear: 1, label: 'I',   effect: '9 min per region', negEffect: 'You have 9 minutes to clear each region or else' },
-      { fear: 3, label: 'II',  effect: '7 min per region', negEffect: 'You have 7 minutes to clear each region or else' },
-      { fear: 6, label: 'III', effect: '5 min per region', negEffect: 'You have 5 minutes to clear each region or else' },
-    ],
-  },
-
   {
     id: 'rivals',
     name: 'Vow of Rivals',

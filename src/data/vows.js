@@ -1,18 +1,48 @@
 export const VOWS = [
   {
     id: 'blood',
-    name: 'Vow of Blood',
+    name: 'Vow of Pain',
     icon: '🩸',
     baseEffect: 'Enemies deal more damage',
     levels: [
       { fear: 1, label: 'I',   effect: 'Foes deal +20% damage',  negEffect: 'Foes deal +20% damage' },
-      { fear: 2, label: 'II',  effect: 'Foes deal +60% damage',  negEffect: 'Foes deal +60% damage' },
-      { fear: 3, label: 'III', effect: 'Foes deal +100% damage', negEffect: 'Foes deal +100% damage' },
+      { fear: 3, label: 'II',  effect: 'Foes deal +60% damage',  negEffect: 'Foes deal +60% damage' },
+      { fear: 5, label: 'III', effect: 'Foes deal +100% damage', negEffect: 'Foes deal +100% damage' },
+    ],
+  },
+  {
+    id: 'fury',
+    name: 'Vow of Frenzy',
+    icon: '⚡',
+    baseEffect: 'Enemies move and attack faster',
+    levels: [
+      { fear: 3, label: 'I',  effect: 'Foes are +20% faster', negEffect: 'Foes move and attack +20% faster' },
+      { fear: 6, label: 'II', effect: 'Foes are +40% faster', negEffect: 'Foes move and attack +40% faster' },
+    ],
+  },
+  {
+    id: 'wandering',
+    name: 'Vow of Menace',
+    icon: '🌀',
+    baseEffect: 'Foes from the next region appear',
+    levels: [
+      { fear: 1, label: 'I',  effect: '10% next-region foes', negEffect: '10% of foes are from the next, harder region' },
+      { fear: 3, label: 'II', effect: '25% next-region foes', negEffect: '25% of foes are from the next, harder region' },
+    ],
+  },
+  {
+    id: 'suffering',
+    name: 'Vow of Fangs',
+    icon: '💥',
+    baseEffect: '# of unique traits for armoured enemies',
+    levels: [
+      { fear: 2, label: 'I',  effect: '1 trait', negEffect: 'One additional trait for armored enemies' },
+      { fear: 5, label: 'II', effect: '2 traits', negEffect: 'Twice additional trait for armored enemies' },
     ],
   },
   {
     id: 'dominance',
-    name: 'Vow of Dominance',
+    name: 'Vow of Grit',
     icon: '💀',
     baseEffect: 'Enemies have more health',
     levels: [
@@ -23,7 +53,7 @@ export const VOWS = [
   },
   {
     id: 'rebuke',
-    name: 'Vow of Rebuke',
+    name: 'Vow of Wards',
     icon: '🛡',
     baseEffect: 'Enemies have a barrier',
     levels: [
@@ -32,28 +62,8 @@ export const VOWS = [
     ],
   },
   {
-    id: 'fury',
-    name: 'Vow of Fury',
-    icon: '⚡',
-    baseEffect: 'Enemies move and attack faster',
-    levels: [
-      { fear: 3, label: 'I',  effect: 'Foes are +20% faster', negEffect: 'Foes move and attack +20% faster' },
-      { fear: 6, label: 'II', effect: 'Foes are +40% faster', negEffect: 'Foes move and attack +40% faster' },
-    ],
-  },
-  {
-    id: 'suffering',
-    name: 'Vow of Suffering',
-    icon: '💥',
-    baseEffect: 'Take bonus damage on first hit per encounter',
-    levels: [
-      { fear: 2, label: 'I',  effect: '+100% damage, first hit', negEffect: 'First hit in each encounter deals +100% damage to you' },
-      { fear: 4, label: 'II', effect: '+300% damage, first hit', negEffect: 'First hit in each encounter deals +300% damage to you' },
-    ],
-  },
-  {
     id: 'commotion',
-    name: 'Vow of Commotion',
+    name: 'Vow of Hordes',
     icon: '👥',
     baseEffect: 'More foes per encounter',
     levels: [
@@ -73,15 +83,16 @@ export const VOWS = [
     ],
   },
   {
-    id: 'wandering',
-    name: 'Vow of Wandering',
-    icon: '🌀',
-    baseEffect: 'Foes from the next region appear',
+    id: 'panic',
+    name: 'Vow of Shadow',
+    icon: '🔮',
+    baseEffect: 'Miniboss have henchman',
     levels: [
-      { fear: 1, label: 'I',  effect: '10% next-region foes', negEffect: '10% of foes are from the next, harder region' },
-      { fear: 2, label: 'II', effect: '25% next-region foes', negEffect: '25% of foes are from the next, harder region' },
+      { fear: 2, label: 'I', effect: 'Adds miniboss henchmen', negEffect: 'Adds one or more minions to miniboss rooms' },
     ],
   },
+
+
   {
     id: 'scars',
     name: 'Vow of Scars',
@@ -90,40 +101,22 @@ export const VOWS = [
     levels: [
       { fear: 1, label: 'I',   effect: 'Healing -25%', negEffect: 'All healing effects reduced by 25%' },
       { fear: 2, label: 'II',  effect: 'Healing -50%', negEffect: 'All healing effects reduced by 50%' },
-      { fear: 4, label: 'III', effect: 'Healing -75%', negEffect: 'All healing effects reduced by 75%' },
+      { fear: 4, label: 'III', effect: 'Healing -100%', negEffect: 'All healing effects reduced by 100%' },
     ],
   },
   {
     id: 'destitution',
-    name: 'Vow of Destitution',
+    name: 'Vow of Debt',
     icon: '💰',
     baseEffect: 'Gold-cost items are more expensive',
     levels: [
-      { fear: 1, label: 'I',  effect: 'Items cost +50% gold',  negEffect: 'Gold-purchased items cost +50%' },
-      { fear: 2, label: 'II', effect: 'Items cost +100% gold', negEffect: 'Gold-purchased items cost +100% (double)' },
-    ],
-  },
-  {
-    id: 'panic',
-    name: 'Vow of Panic',
-    icon: '🔮',
-    baseEffect: 'Enter locations with reduced magick',
-    levels: [
-      { fear: 1, label: 'I', effect: 'Start each room with 0 magick', negEffect: 'Enter each location with 0 magick (fully drained)' },
-    ],
-  },
-  {
-    id: 'forsaking',
-    name: 'Vow of Forsaking',
-    icon: '🚫',
-    baseEffect: 'Unchosen boons are permanently removed',
-    levels: [
-      { fear: 2, label: 'I', effect: '2 unchosen boons removed', negEffect: 'After picking a boon, the 2 unpicked options will never appear again' },
+      { fear: 1, label: 'I',  effect: 'Items cost +40% gold',  negEffect: 'Gold-purchased items cost +40%' },
+      { fear: 2, label: 'II', effect: 'Items cost +80% gold', negEffect: 'Gold-purchased items cost +80%' },
     ],
   },
   {
     id: 'bitterness',
-    name: 'Vow of Bitterness',
+    name: 'Vow of Forfeit',
     icon: '🧅',
     baseEffect: 'First boon in each region replaced by an onion',
     levels: [
@@ -131,33 +124,59 @@ export const VOWS = [
     ],
   },
   {
+    id: 'abandon',
+    name: 'Vow of Void',
+    icon: '🃏',
+    baseEffect: 'Cannot use as much grasp',
+    levels: [
+      { fear: 1, label: 'I', effect: '60% grasp', negEffect: 'Only 60% of grasp is available (18 at max)' },
+      { fear: 2, label: 'II', effect: '40% grasp', negEffect: 'Only 40% of grasp is available (12 at max)' },
+      { fear: 3, label: 'III', effect: '20% grasp', negEffect: 'Only 20% of grasp is available (6 at max)' },
+      { fear: 5, label: 'IV', effect: '0% grasp', negEffect: 'Only 0% of grasp is available (0 at max)' },
+    ],
+  },
+  {
     id: 'arrogance',
-    name: 'Vow of Arrogance',
+    name: 'Vow of Hubris',
     icon: '✨',
     baseEffect: 'Rare+ boons drain your magick',
     levels: [
-      { fear: 1, label: 'I',  effect: 'Prime magick per rarity >Common (×1)', negEffect: 'Each boon rarity above Common primes (drains) 1 magick when obtained' },
-      { fear: 3, label: 'II', effect: 'Prime magick per rarity >Common (×2)', negEffect: 'Each boon rarity above Common primes (drains) 2 magick when obtained' },
+      { fear: 1, label: 'I',  effect: 'Prime magick per rarity >Common (×1)', negEffect: 'Each boon rarity above Common primes 3 magick when obtained' },
+      { fear: 2, label: 'II', effect: 'Prime magick per rarity >Common (×2)', negEffect: 'Each boon rarity above Common primes 6 magick when obtained' },
     ],
   },
+  {
+    id: 'forsaking',
+    name: 'Vow of Denial',
+    icon: '🚫',
+    baseEffect: 'Unchosen boons are permanently removed',
+    levels: [
+      { fear: 2, label: 'I', effect: '2 unchosen boons removed', negEffect: 'After picking a boon, the 2 unpicked options will never appear again' },
+    ],
+  },
+
   {
     id: 'desperation',
     name: 'Vow of Desperation',
     icon: '⏳',
     baseEffect: 'Time limit per region',
     levels: [
-      { fear: 1, label: 'I',   effect: '9 min per region', negEffect: 'You have 9 minutes to clear each region or you die' },
-      { fear: 3, label: 'II',  effect: '7 min per region', negEffect: 'You have 7 minutes to clear each region or you die' },
-      { fear: 6, label: 'III', effect: '5 min per region', negEffect: 'You have 5 minutes to clear each region or you die' },
+      { fear: 1, label: 'I',   effect: '9 min per region', negEffect: 'You have 9 minutes to clear each region or else' },
+      { fear: 3, label: 'II',  effect: '7 min per region', negEffect: 'You have 7 minutes to clear each region or else' },
+      { fear: 6, label: 'III', effect: '5 min per region', negEffect: 'You have 5 minutes to clear each region or else' },
     ],
   },
+
   {
-    id: 'abandon',
-    name: 'Vow of Abandon',
-    icon: '🃏',
-    baseEffect: 'Arcana cards are nullified',
+    id: 'rivals',
+    name: 'Vow of Rivals',
+    icon: '⏳',
+    baseEffect: 'Bosses have new forms',
     levels: [
-      { fear: 5, label: 'I', effect: 'All Arcana card bonuses disabled', negEffect: 'All Arcana card bonuses are completely nullified for the run' },
+      { fear: 2, label: 'I',   effect: 'First boss', negEffect: 'First boss in a run has a new form' },
+      { fear: 5, label: 'II',   effect: 'First two', negEffect: 'First two in a run have a new form' },
+      { fear: 8, label: 'III',   effect: 'First three', negEffect: 'First three in a run have a new form' },
+      { fear: 12, label: 'IV',   effect: 'All', negEffect: 'Four bosses in a run have a new form' },
     ],
   },
 ];
